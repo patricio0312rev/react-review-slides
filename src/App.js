@@ -1,10 +1,20 @@
+import React from 'react';
+import Review from './components/review/review.component';
 import reviews from "./data";
+
 
 function App() {
   return (
-    <div className="App">
-      <h2>Hello world!</h2>
-    </div>
+    <main className="App">
+      <section className='container'>
+        <div className='title'>
+          <h2>Our reviews</h2>
+          <div className='underline'></div>
+        </div>
+
+        <Review />
+      </section>
+    </main>
   );
 }
 
