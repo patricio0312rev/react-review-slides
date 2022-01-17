@@ -1,6 +1,5 @@
 import React from 'react';
 import Review from './components/review/review.component';
-import reviews from "./data";
 
 
 function App() {
