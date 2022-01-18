@@ -32,6 +32,15 @@ const Review = () => {
         });
     }
 
+    const randomSlide = () => {
+        let randomNumber = Math.floor(Math.random() * reviews.length);
+        if(randomNumber === index) {
+            randomNumber = index + 1;
+        }
+
+        setIndex(checkNumber(randomNumber));
+    }
+
     return (
         <article className="review">
             <div className="img-container">
@@ -49,7 +58,7 @@ const Review = () => {
                 <button className="prev-btn" onClick={prevSlide} /*disabled={index === 0}*/><FaChevronLeft/></button>
                 <button className="next-btn" onClick={nextSlide} /*disabled={index === reviews.length - 1}*/><FaChevronRight/></button>
             </div>
-            <button className="random-btn">Surprise Me</button>
+            <button className="random-btn" onClick={randomSlide}>Surprise Me</button>
         </article>
     );
 }
