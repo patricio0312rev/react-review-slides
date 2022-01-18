@@ -6,6 +6,32 @@ const Review = () => {
     const [index, setIndex] = useState(0);
     const { name, job, image, text } = reviews[index];
 
+    const checkNumber = (number) => {
+        if(number > reviews.length - 1) {
+            return 0;
+        } 
+
+        if(number < 0) {
+            return reviews.length - 1;
+        }
+
+        return number;
+    }
+
+    const nextSlide = () => {
+        setIndex((index) => {
+            let newIndex = index + 1;
+            return checkNumber(newIndex);
+        });
+    }
+
+    const prevSlide = () => {
+        setIndex((index) => {
+            let newIndex = index - 1;
+            return checkNumber(newIndex);
+        });
+    }
+
     return (
         <article className="review">
             <div className="img-container">
@@ -20,8 +46,8 @@ const Review = () => {
             <p className="info">{text}</p>
 
             <div className="button-container">
-                <button className="prev-btn"><FaChevronLeft/></button>
-                <button className="next-btn"><FaChevronRight/></button>
+                <button className="prev-btn" onClick={prevSlide} /*disabled={index === 0}*/><FaChevronLeft/></button>
+                <button className="next-btn" onClick={nextSlide} /*disabled={index === reviews.length - 1}*/><FaChevronRight/></button>
             </div>
             <button className="random-btn">Surprise Me</button>
         </article>
