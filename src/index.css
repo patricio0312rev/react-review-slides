@@ -207,7 +207,7 @@ main {
   position: absolute;
   top: -0.25rem;
   right: -0.5rem;
-  border-radius: 50%;
+  border-radius: 50%; 
 }
 .author {
   margin-bottom: 0.25rem;
